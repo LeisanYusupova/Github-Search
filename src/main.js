@@ -44,7 +44,6 @@ function deleteErrorMessage() {
     }                   
 }
 
-// https://api.github.com/search/users?q=${searchValue}`
 
 async function searchUsers(searchValue) {
     deleteErrorMessage();      
