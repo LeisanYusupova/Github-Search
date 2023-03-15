@@ -36,14 +36,24 @@ function createErrorMessage(text) {
     inputBlock.append(errorMessage);
 }
 
+function deleteErrorMessage() {
+    let errorMessage = document.querySelector('.error-message');
+    if (errorMessage) {
+        if (errorMessage.classList.contains('error-message')) {
+            errorMessage.remove();
+        }
+    }                   
+}
+
 // https://api.github.com/search/users?q=${searchValue}`
 
 async function searchUsers(searchValue) {
+    deleteErrorMessage();      
     if (searchValue.length < 3) {
         createErrorMessage('Недостаточно символов для поиска')
         return false;
     }
-        return await fetch(`https://api.github.com/search/repositories?q=${searchValue}`)
+        return await fetch(`https://api.github.com/search/repositories?q=${searchValue} in:name`)
         .then((res) => {
             if (res.ok)  {
                 res.json().then(res => {
@@ -53,13 +63,7 @@ async function searchUsers(searchValue) {
                     if (results.length === 0) {                      
                         createErrorMessage('Ничего не найдено, введите другое название');
                     }   else {
-                        let errorMessage = document.querySelector('.error-message');
-                        if (errorMessage) {
-                            if (errorMessage.classList.contains('error-message')) {
-                                console.log('yes');
-                                errorMessage.remove();
-                            }
-                        }                       
+                        deleteErrorMessage();              
                         console.log(results.length);
                         results.slice(0,10).forEach(item => createElement(item));
                     }   

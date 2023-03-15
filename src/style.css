@@ -1,21 +1,24 @@
 .search-input {
+    box-sizing: border-box;
+    padding-top:5px;
+    padding-bottom: 5px;
     display: block;
     margin: 0 auto;
-    width: 250px;
+    width: 260px;
     border-radius: 5px;
     border: 2px solid orangered;
+    position: relative;
 }
 
 
 .search-button {
     box-sizing: border-box;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     display: block;
     text-align: center;
-    width:60px;
+    width:80px;
     margin: 0 auto;
-    margin-top:20px;
     border-radius: 5px;
     background-color: orangered;
     color: aliceblue;
@@ -26,7 +29,7 @@
 .search-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .search-result {
@@ -67,4 +70,8 @@
     text-align: center;
     color: orangered;
     margin-top: 5px;
+}
+
+.input-wrapper {
+    height: 70px;
 }
