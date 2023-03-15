@@ -1,4 +1,3 @@
-const USER_PER_PAGE = 10;
 
 let searchForm = document.querySelector('.search-form');
 let Input = document.querySelector('.search-input');
