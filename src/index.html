@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Github search</title>
+</head>
+<body>
+    <h1 class="search-title">GitHub search</h1>
+    <form class="search-form">
+        <div class="input-wrapper">
+            <input class="search-input" type="text" placeholder="Начните вводить название репозитория">
+        </div>       
+        <button class="search-button" type="submit">Найти</button>  
+    </form>
+    <div class="search-result">
+
+    </div>
+    <template id="search-template">
+            <div class="search-item">
+                <a class="item-link">
+                </a>
+                <span class ="description">Description:</span>
+                <span class="item-description">
+                </span>
+                <span class="language">Language:</span>
+                <span class="item-language"></span>
+            </div>
+    </template>
+    <script src="main.js"></script>
+</body>
+</html>
